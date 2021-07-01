@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的第一篇博客文章, Hexo">
+    <meta name="keywords" content="模糊查询, Only">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>我的第一篇博客文章 | Hexo</title>
+    <title>模糊查询 | Only</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Hexo</span>
+                    <span class="logo-span">Only</span>
                 </a>
             </div>
             
@@ -142,7 +142,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Hexo</div>
+        <div class="logo-name">Only</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -252,7 +252,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我的第一篇博客文章</h1>
+                    <h1 class="description center-align post-title">模糊查询</h1>
                 </div>
             </div>
         </div>
@@ -372,6 +372,10 @@
                                 <span class="chip bg-color">jQuery</span>
                             </a>
                         
+                            <a href="/tags/html/">
+                                <span class="chip bg-color">html</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -380,8 +384,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                笔记
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -402,7 +406,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    26
+                    437
                 </div>
                 
 
@@ -424,7 +428,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p> DOM 对象 使用原生javascript 属性和方法<br> jQuery 对象只能使用 jquery 方法        </p>
+                <h2 id="如果使用序列化的方法，先要创建序列化器"><a href="#如果使用序列化的方法，先要创建序列化器" class="headerlink" title="如果使用序列化的方法，先要创建序列化器"></a>如果使用序列化的方法，先要创建序列化器</h2><ul>
+<li>第一步：配置子路由：<br>path(‘tiao/‘,views.tiao.as_view(),name=’tiao’)</li>
+</ul>
+<ul>
+<li><p>第二步：HTML页面：<br><code>&lt;input type=&quot;text&quot; id=&quot;cha&quot;&gt; &lt;button onclick=&quot;tiaojian()&quot;&gt;查询&lt;/button&gt; </code>  </p>
+</li>
+<li><p>写一个按钮触发函数</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tiaojian</span><span class="params">()</span></span> &#123;</span><br><span class="line">        var a = $(<span class="string">&#x27;#cha&#x27;</span>).val();</span><br><span class="line">        </span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            url: <span class="string">&quot;&#123;% url &#x27;tiao&#x27; %&#125;&quot;</span>,</span><br><span class="line">            <span class="built_in">type</span>: <span class="string">&#x27;GET&#x27;</span>,           #get请求或者post请求都可以</span><br><span class="line">            data: (&#123;</span><br><span class="line">                <span class="string">&#x27;cha&#x27;</span>: a           #把获取到的值定义为‘cha’ 传到后端 </span><br><span class="line">            &#125;),</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span> <span class="params">(date)</span></span> &#123;</span><br><span class="line">                var html = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">                <span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; <span class="built_in">date</span>.length; i++) &#123;</span><br><span class="line">                    html += <span class="string">&#x27;&lt;tr&gt;&lt;td&gt;&#x27;</span> + <span class="string">&#x27;&lt;input type=&quot;checkbox&quot; name=&quot;bat&quot; value=&quot;&#123;&#123; b.id &#125;&#125;&quot;&gt;&#x27;</span> + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].id + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].bname + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].stock + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].money + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].author_id + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].comment + <span class="string">&#x27;&lt;/td&gt;&lt;/tr&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                $(<span class="string">&#x27;#text&#x27;</span>).html(html)</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="built_in">error</span>: <span class="function"><span class="keyword">function</span> <span class="params">()</span></span> &#123;</span><br><span class="line">                alert(<span class="string">&#x27;error&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>第三步：Views.py   有两种写法，一中序列化器的写法，一个原生的写法</p>
+<h3 id="序列化器的写法"><a href="#序列化器的写法" class="headerlink" title="序列化器的写法"></a>序列化器的写法</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework.views import APIView</span><br><span class="line"><span class="keyword">from</span> shop.serializer import BookModelSerializer</span><br><span class="line"></span><br><span class="line">class tiao(APIView):</span><br><span class="line">    def <span class="builtin-name">get</span>(self,request):</span><br><span class="line">        cha = request.GET.<span class="builtin-name">get</span>(<span class="string">&#x27;cha&#x27;</span>)</span><br><span class="line">        v = Books.objects.filter(<span class="attribute">bname__contains</span>=cha).all()   #模糊查询到bname字段中有前端获取关键词的所有值</span><br><span class="line">        serializr = BookModelSerializer(<span class="attribute">instance</span>=v, <span class="attribute">many</span>=<span class="literal">True</span>)      </span><br><span class="line">        date = serializr.data</span><br><span class="line">        return JsonResponse(date,<span class="attribute">safe</span>=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="原生的写法"><a href="#原生的写法" class="headerlink" title="原生的写法"></a>原生的写法</h3>   <figure class="highlight plaintext"><figcaption><span>tiao(request):</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cha = request.POST.get(&#x27;cha&#x27;)</span><br><span class="line">v = Books.objects.filter(bname__contains=cha).all()</span><br><span class="line">data = []</span><br><span class="line">for i in v:</span><br><span class="line">    data_dict = &#123;</span><br><span class="line">        &#x27;bname&#x27;:i.bname,</span><br><span class="line">        &#x27;stock&#x27;:i.stock,</span><br><span class="line">        &#x27;money&#x27;:i.money,</span><br><span class="line">        &#x27;author_id&#x27;:i.author_id_id,</span><br><span class="line">        &#x27;comment&#x27;:i.comment,</span><br><span class="line">    &#125;</span><br><span class="line">    data.append(data_dict)</span><br><span class="line">return JsonResponse(data,safe=False)</span><br></pre></td></tr></table></figure>
+
 
                 
             </div>
@@ -491,6 +507,10 @@
                             
                                 <a href="/tags/jQuery/">
                                     <span class="chip bg-color">jQuery</span>
+                                </a>
+                            
+                                <a href="/tags/html/">
+                                    <span class="chip bg-color">html</span>
                                 </a>
                             
                         </div>
@@ -642,35 +662,34 @@
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
 
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
     </div>
-    <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        repo: '',
-        owner: '',
-        admin: null,
-        id: '2021-06-29T16-54-44',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'http://wlyyqx.github.io/2021/062915650.html';
+        this.page.identifier = '/2021/062915650.html';
+        this.page.title = '模糊查询';
+    };
+    let disqus_shortname = '';
 
-    gitalk.render('gitalk-container');
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
-
-    
-
-    
 
     
 
@@ -689,18 +708,66 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/062915650.html">
+                <a href="/2021/062915651.html">
                     <div class="card-image">
                         
                         
                         <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="我的第一篇博客文章">
                         
                         <span class="card-title">我的第一篇博客文章</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/jQuery/">
+                        <span class="chip bg-color">jQuery</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/062915650.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="模糊查询">
+                        
+                        <span class="card-title">模糊查询</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -717,8 +784,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -733,43 +800,10 @@
                         <span class="chip bg-color">jQuery</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/062916107.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            lady X
-                            
-                        </span>
-                    </div>
+                    <a href="/tags/html/">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
                 </div>
                 
             </div>
