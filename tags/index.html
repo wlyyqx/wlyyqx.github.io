@@ -282,9 +282,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -304,19 +302,55 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/jQuery/" title="jQuery: 2">
+                <a href="/tags/Python/" title="Python: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="jQuery" style="background-color: #F9EBEA;">jQuery
-                        <span class="tag-length">2</span>
+                            data-tagname="Python" style="background-color: #F9EBEA;">Python
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/html/" title="html: 1">
+                <a href="/tags/Django/" title="Django: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="html" style="background-color: #F5EEF8;">html
+                            data-tagname="Django" style="background-color: #F5EEF8;">Django
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/jQuery/" title="jQuery: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="jQuery" style="background-color: #D5F5E3;">jQuery
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Ajax/" title="Ajax: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Ajax" style="background-color: #E8F8F5;">Ajax
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/python/" title="python: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="python" style="background-color: #FEF9E7;">python
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/DRF/" title="DRF: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="DRF" style="background-color: #F8F9F9;">DRF
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -345,7 +379,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"jQuery","weight":2,"link":"/tags/jQuery/"},{"text":"html","weight":1,"link":"/tags/html/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"Python","weight":1,"link":"/tags/Python/"},{"text":"Django","weight":1,"link":"/tags/Django/"},{"text":"jQuery","weight":1,"link":"/tags/jQuery/"},{"text":"Ajax","weight":1,"link":"/tags/Ajax/"},{"text":"python","weight":1,"link":"/tags/python/"},{"text":"DRF","weight":1,"link":"/tags/DRF/"}], {
         autoResize: true
     });
 </script>
