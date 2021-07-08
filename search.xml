@@ -29,31 +29,6 @@
     
     
     <entry>
-      <title>restful风格</title>
-      <link href="/2021/07082.html"/>
-      <url>/2021/07082.html</url>
-      
-        <content type="html"><![CDATA[<h4 id="restful风格介绍："><a href="#restful风格介绍：" class="headerlink" title="restful风格介绍："></a>restful风格介绍：</h4><p>​    一种软件架构风格，设计风格，不是标准 ，可以解决不通程序员共同协作的代码不和谐问题</p><h4 id="设计风格："><a href="#设计风格：" class="headerlink" title="设计风格："></a>设计风格：</h4><ul><li><p>域名：api应该部署到转有域名下</p></li><li><p>路径：不能用动词</p></li><li><p>版本：在地址栏拼接</p></li><li><p>http动词：不同的请求方式，表示操作不同的资源</p></li><li><p>过滤：以问号的形式携带</p></li><li><p>状态：200,201,204，401,403,404,500</p></li><li><p>返回值：json</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DRF </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>pycharm git多人协作开发</title>
       <link href="/2021/07082.html"/>
       <url>/2021/07082.html</url>
