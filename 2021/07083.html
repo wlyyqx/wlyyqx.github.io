@@ -1,0 +1,1479 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="序列化器, Only">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>序列化器 | Only</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Only</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Only</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">序列化器</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/DRF/">
+                                <span class="chip bg-color">DRF</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-07-08
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.6k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="序列化器："><a href="#序列化器：" class="headerlink" title="序列化器："></a>序列化器：</h4><p>作用：<img src="/2021/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210416101325153.png" alt="image-20210416101325153"></p>
+<h5 id="序列化："><a href="#序列化：" class="headerlink" title="序列化："></a>序列化：</h5><p>​    数据之间的相互转换，数据结构类型转换为其他格式（字典，JSON，XML等），将Django的模型类对象转换为JSON字符串</p>
+<h5 id="反序列化："><a href="#反序列化：" class="headerlink" title="反序列化："></a>反序列化：</h5><p>​    反之，将其他格式转换为程序整的数据，例如将JSON字符串转换为Django中的模型类对象</p>
+<h5 id="1-1定义："><a href="#1-1定义：" class="headerlink" title="1.1定义："></a>1.1定义：</h5><p>能够参考模型序列化器：</p>
+<pre><code>&quot;&quot;&quot;
+定义序列化器
+１．定义类，继承自Serializer
+２．和模型类，字段，类型，选项一样
+    read_only=True　只读
+    label　字段说明
+
+&quot;&quot;&quot;
+</code></pre>
+<p>代码(book/serializers.py)：</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#1.定义序列化器</span>
+<span class="token keyword">class</span> <span class="token class-name">BookInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    id <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'id'</span><span class="token punctuation">,</span>read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    btitle <span class="token operator">=</span> serializers<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'名称'</span><span class="token punctuation">)</span>
+    bpub_date <span class="token operator">=</span> serializers<span class="token punctuation">.</span>DateField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'发布日期'</span><span class="token punctuation">)</span>
+    bread <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'阅读量'</span><span class="token punctuation">)</span>
+    bcomment <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'评论数'</span><span class="token punctuation">)</span>
+    is_delete <span class="token operator">=</span> serializers<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'逻辑删除'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>代码(book/model.py)：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
+
+<span class="token comment" spellcheck="true">#定义图书模型类</span>
+<span class="token keyword">class</span> <span class="token class-name">BookInfo</span><span class="token punctuation">(</span>models<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    btitle <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span><span class="token string">'名称'</span><span class="token punctuation">)</span>
+    bpub_date <span class="token operator">=</span> models<span class="token punctuation">.</span>DateField<span class="token punctuation">(</span>verbose_name<span class="token operator">=</span><span class="token string">'发布日期'</span><span class="token punctuation">)</span>
+    bread <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span><span class="token string">'阅读量'</span><span class="token punctuation">)</span>
+    bcomment <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span><span class="token string">'评论数'</span><span class="token punctuation">)</span>
+    is_delete <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span><span class="token string">'逻辑删除'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        db_table <span class="token operator">=</span> <span class="token string">'tb_books'</span> <span class="token comment" spellcheck="true">#　知名数据库名称</span>
+        verbose_name <span class="token operator">=</span> <span class="token string">'图书'</span> <span class="token comment" spellcheck="true">#ａｄｍｉｎ站点中显示的名称</span>
+        verbose_name_plural <span class="token operator">=</span> verbose_name <span class="token comment" spellcheck="true">#显示的复数名称</span>
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">'''定义每个数据对象的显示信息'''</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>btitle
+
+</code></pre>
+<h5 id="1-2序列化器，序列化单个对象"><a href="#1-2序列化器，序列化单个对象" class="headerlink" title="1.2序列化器，序列化单个对象"></a>1.2序列化器，序列化单个对象</h5><p>​    操作流程(book/view.py)</p>
+<pre class=" language-python"><code class="language-python">
+<span class="token triple-quoted-string string">'''===========1.序列化器，序列化单个书籍对象==========='''</span>
+<span class="token keyword">from</span> <span class="token punctuation">.</span>serializers <span class="token keyword">import</span> BookInfoSerializer
+<span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> BookInfo
+
+<span class="token comment" spellcheck="true">#1.获取书籍对象</span>
+book <span class="token operator">=</span> BookInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#2.创建序列化器，instance，表示要序列化的对象</span>
+serializer <span class="token operator">=</span> BookInfoSerializer<span class="token punctuation">(</span>instance<span class="token operator">=</span>book<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#3．转换数据</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>serializer<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+结果：
+&amp;#123;'id': 1, 'btitle': '西游记', 'bpub_date': '2021-04-21', 'bread': 30, 'bcomment': 39, 'is_delete': False&amp;#125;
+'''</span>
+</code></pre>
+<p>注意点：<br>    BookInfoSerializer(instance=book)</p>
+<p>​        instance=book：表示将book序列化</p>
+<p>​    serializer.data：获取序列化的结果</p>
+<h5 id="序列化器，序列化列表"><a href="#序列化器，序列化列表" class="headerlink" title="序列化器，序列化列表"></a>序列化器，序列化列表</h5><p>​    操作流程(book/view.py)</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#1.获取书籍对象</span>
+books <span class="token operator">=</span> BookInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#2.创建序列化器，instance，表示要序列化的对象,many=True　表示序列化多个对象</span>
+serializer <span class="token operator">=</span> BookInfoSerializer<span class="token punctuation">(</span>instance<span class="token operator">=</span>books<span class="token punctuation">,</span>many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#3．转换数据</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>serializer<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+结果：
+[OrderedDict([('id', 1), ('btitle', '西游记'), ('bpub_date', '2021-04-21'), ('bread', 30), ('bcomment', 39), ('is_delete', False)]),
+ OrderedDict([('id', 2), ('btitle', '水浒传'), ('bpub_date', '2021-04-08'), ('bread', 40), ('bcomment', 30), ('is_delete', False)])]
+
+'''</span>
+</code></pre>
+<h5 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h5><p>​    BookInfoSerializer(instance=book,many=True)</p>
+<p>​        many=True：表示序列化多个对象</p>
+<h5 id="英雄序列化器"><a href="#英雄序列化器" class="headerlink" title="英雄序列化器"></a>英雄序列化器</h5><p>​    操作流程(book/serializers.py):</p>
+<p>定义英雄序列化器：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">HeroInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""英雄数据序列化器"""</span>
+    GENDER_CHOICES <span class="token operator">=</span> <span class="token punctuation">(</span>
+        <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'male'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'female'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+    id <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'ID'</span><span class="token punctuation">,</span> read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    hname <span class="token operator">=</span> serializers<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'名字'</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
+    hgender <span class="token operator">=</span> serializers<span class="token punctuation">.</span>ChoiceField<span class="token punctuation">(</span>choices<span class="token operator">=</span>GENDER_CHOICES<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'性别'</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    hcomment <span class="token operator">=</span> serializers<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'描述信息'</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> allow_null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+
+</code></pre>
+<p>定义关联字段：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">HeroInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    
+<span class="token comment" spellcheck="true">#1,添加外键,主键表示 必须提供`queryset` 选项, 或者设置 read_only=`True`.显示外键</span>
+    <span class="token comment" spellcheck="true"># hbook = serializers.PrimaryKeyRelatedField(queryset=BookInfo.objects.all())</span>
+    <span class="token comment" spellcheck="true"># hbook = serializers.PrimaryKeyRelatedField(read_only=True)</span>
+    <span class="token comment" spellcheck="true"># 结果：&amp;#123;'id': 1, 'hname': '吴承恩', 'hgender': 1, 'hcomment': '孙悟空', 'hbook': 1&amp;#125;</span>
+
+    <span class="token comment" spellcheck="true">#2,添加外键, 来自于关联模型类, __str__的返回值　外键名称</span>
+    <span class="token comment" spellcheck="true"># hbook = serializers.StringRelatedField(read_only=True)</span>
+    <span class="token comment" spellcheck="true"># 结果：&amp;#123;'id': 1, 'hname': '吴承恩', 'hgender': 1, 'hcomment': '孙悟空', 'hbook': '西游记'&amp;#125;</span>
+
+    <span class="token comment" spellcheck="true">#3,添加外键,关联另外一个序列化器　返回外键关联的所有信息</span>
+    hbook <span class="token operator">=</span> BookInfoSerializer<span class="token punctuation">(</span>read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 结果：&amp;#123;'id': 1, 'hname': '吴承恩', 'hgender': 1, 'hcomment': '孙悟空', 'hbook': OrderedDict([('id', 1), ('btitle', '西游记'), ('bpub_date', '2021-04-21'), ('bread', 30), ('bcomment', 39), ('is_delete', False)])&amp;#125;</span>
+</code></pre>
+<h5 id="书籍序列化器，关联many"><a href="#书籍序列化器，关联many" class="headerlink" title="书籍序列化器，关联many"></a>书籍序列化器，关联many</h5><p>​    目的：能够序列化书籍的时候，输出关联作者信息</p>
+<p>​    操作流程（book/serializers.py）：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">BookInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    id <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'id'</span><span class="token punctuation">,</span>read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    btitle <span class="token operator">=</span> serializers<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'名称'</span><span class="token punctuation">)</span>
+    bpub_date <span class="token operator">=</span> serializers<span class="token punctuation">.</span>DateField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'发布日期'</span><span class="token punctuation">)</span>
+    bread <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'阅读量'</span><span class="token punctuation">)</span>
+    bcomment <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'评论数'</span><span class="token punctuation">)</span>
+    is_delete <span class="token operator">=</span> serializers<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'逻辑删除'</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">#1.用书籍查作者：关联英雄主键，many=True,一方中，序列化多方需要加上　(获取ｉｄ)</span>
+    <span class="token comment" spellcheck="true"># heroinfo_set = serializers.PrimaryKeyRelatedField(read_only=True,many=True)</span>
+    <span class="token comment" spellcheck="true">#２．关联英雄,__str__返回值（获取ｎａｍｅ）</span>
+    heroinfo_set <span class="token operator">=</span> serializers<span class="token punctuation">.</span>StringRelatedField<span class="token punctuation">(</span>read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre>
+<p>​    注意：</p>
+<p>​            many=True,一方中，序列化多方需要加上</p>
+<p>==============================================</p>
+<h4 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h4><p>1.1数据类型验证</p>
+<ul>
+<li><p>目的：理解序列化器中的字段，对数据进行校验的过程</p>
+</li>
+<li><p>常见的字段类型：</p>
+<ol>
+<li><p>CharField：字段串</p>
+</li>
+<li><p>······</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>1.2反序列化选项验证</p>
+<p><img src="/2021/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210419093003168.png" alt="image-20210419093003168"></p>
+<p>判断max_length等等</p>
+<ul>
+<li>requred：默认是True，必须要传递，除非设置了 default | false | read_only</li>
+<li>read_only： 只读，不进行反序列化</li>
+</ul>
+<p>1.3反序列化单个字段验证 ：</p>
+<p>​    目的：定义单个字段校验</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">BookInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    
+    
+    
+    <span class="token comment" spellcheck="true"># 反序列化单个字段校验 validate多字段校验，加上字段名是单个字段校验</span>
+    <span class="token keyword">def</span> <span class="token function">validate_btitle</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+         <span class="token comment" spellcheck="true"># 校验ｖａｌｕｅ的内容</span>
+         <span class="token keyword">if</span> <span class="token string">'金瓶'</span> <span class="token operator">not</span> <span class="token keyword">in</span> value<span class="token punctuation">:</span>
+             <span class="token keyword">raise</span>  serializers<span class="token punctuation">.</span>ValidationError<span class="token punctuation">(</span><span class="token string">'书籍不包含金瓶'</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> value
+</code></pre>
+<ul>
+<li>注意点：<ul>
+<li>固定格式：<br>def validate_字段名称(self, value):<ul>
+<li>pass</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>1.4 反序列化，多个字段validate验证</p>
+<ul>
+<li><p>目的：</p>
+</li>
+<li><p>代码展示：</p>
+</li>
+<li><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#多字段校验</span>
+    <span class="token keyword">def</span> <span class="token function">validate</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> attrs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :param attrs: 外界传过来的，book_dict
+        :return: 
+        """</span>
+        <span class="token comment" spellcheck="true">#1．获取阅读量，评论量</span>
+        bread <span class="token operator">=</span> attrs<span class="token punctuation">[</span><span class="token string">'bread'</span><span class="token punctuation">]</span>
+        bcomment <span class="token operator">=</span> attrs<span class="token punctuation">[</span><span class="token string">'bcomment'</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true">#2.判断</span>
+        <span class="token keyword">if</span> bcomment <span class="token operator">></span> bread<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> serializers<span class="token punctuation">.</span>ValidationError<span class="token punctuation">(</span><span class="token string">'评论量大于阅读量'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">#返回：</span>
+        <span class="token keyword">return</span> attrs
+</code></pre>
+</li>
+<li><p>注意：</p>
+<ul>
+<li>校验不通过的时候一定要抛出异常</li>
+</ul>
+</li>
+</ul>
+<p>1.5反序列化，自定义验证方法</p>
+<p>1.6 反序列化，create保存数据</p>
+<ul>
+<li><p>视图层：</p>
+<ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> book<span class="token punctuation">.</span>serializers <span class="token keyword">import</span> BookInfoSerializer
+<span class="token comment" spellcheck="true"># 1.准备数据</span>
+book_dict <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token string">"btitle"</span><span class="token punctuation">:</span><span class="token string">"金瓶x-插画版"</span><span class="token punctuation">,</span>
+    <span class="token string">"bpub_date"</span><span class="token punctuation">:</span><span class="token string">"2019-01-01"</span><span class="token punctuation">,</span>
+    <span class="token string">"bread"</span><span class="token punctuation">:</span><span class="token number">17</span><span class="token punctuation">,</span>
+    <span class="token string">"bcomment"</span><span class="token punctuation">:</span><span class="token number">25</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+
+<span class="token comment" spellcheck="true">#2,创建序列化器，校验</span>
+serializer <span class="token operator">=</span> BookInfoSerializer<span class="token punctuation">(</span>data<span class="token operator">=</span>book_dict<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># serializer.is_valid()</span>
+
+serializer<span class="token punctuation">.</span>is_valid<span class="token punctuation">(</span>raise_exception<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#校验不通过，直接报错</span>
+<span class="token comment" spellcheck="true"># ３．输出</span>
+serializer<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>序列化器代码</p>
+<ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> rest_framework <span class="token keyword">import</span> serializers
+
+<span class="token comment" spellcheck="true">#1.定义序列化器</span>
+<span class="token keyword">from</span> book<span class="token punctuation">.</span>models <span class="token keyword">import</span> BookInfo
+<span class="token keyword">class</span> <span class="token class-name">BookInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+    <span class="token comment" spellcheck="true">#实现create方法</span>
+    <span class="token keyword">def</span> <span class="token function">create</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> validated_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">'''
+        :param validated_data: 校验成功子后的数据
+        :return:
+        '''</span>
+        <span class="token comment" spellcheck="true">#1.创建ｂｏｏｋ对象，入库</span>
+        book <span class="token operator">=</span> BookInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>create<span class="token punctuation">(</span><span class="token operator">**</span>validated_data<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">#2.返回</span>
+        <span class="token keyword">return</span> book
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>注意点：</p>
+<ul>
+<li>当使用序列化器调用sava方法的时候，执行的就是序列化器中的create方法</li>
+</ul>
+</li>
+</ul>
+<p>1.7 反序列化，update更新数据</p>
+<ul>
+<li><p>视图层：</p>
+<ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">'''===========３.序列化器，反序列化,update更新数据==========='''</span><span class="token string">''</span>
+
+<span class="token keyword">from</span> book<span class="token punctuation">.</span>serializers <span class="token keyword">import</span> BookInfoSerializer
+<span class="token keyword">from</span> book<span class="token punctuation">.</span>models <span class="token keyword">import</span> BookInfo
+<span class="token comment" spellcheck="true"># 1.准备数据</span>
+book_dict <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token string">"btitle"</span><span class="token punctuation">:</span><span class="token string">"水浒传"</span><span class="token punctuation">,</span>
+    <span class="token string">"bpub_date"</span><span class="token punctuation">:</span><span class="token string">"2019-01-01"</span><span class="token punctuation">,</span>
+    <span class="token string">"bread"</span><span class="token punctuation">:</span><span class="token number">50</span><span class="token punctuation">,</span>
+    <span class="token string">"bcomment"</span><span class="token punctuation">:</span><span class="token number">25</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token comment" spellcheck="true">#要更新的数据</span>
+book <span class="token operator">=</span> BookInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#2,创建序列化器，校验</span>
+serializer <span class="token operator">=</span> BookInfoSerializer<span class="token punctuation">(</span>instance<span class="token operator">=</span>book<span class="token punctuation">,</span>data<span class="token operator">=</span>book_dict<span class="token punctuation">)</span>
+
+
+serializer<span class="token punctuation">.</span>is_valid<span class="token punctuation">(</span>raise_exception<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#校验不通过，直接报错</span>
+<span class="token comment" spellcheck="true"># ３．入库</span>
+serializer<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>序列化器代码:</p>
+<ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> rest_framework <span class="token keyword">import</span> serializers
+
+<span class="token comment" spellcheck="true">#1.定义序列化器</span>
+<span class="token keyword">from</span> book<span class="token punctuation">.</span>models <span class="token keyword">import</span> BookInfo
+<span class="token keyword">class</span> <span class="token class-name">BookInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+   <span class="token comment" spellcheck="true">#实现update方法：</span>
+    <span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> instance<span class="token punctuation">,</span> validated_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">'''
+
+        :param instance: 外界传过来的值
+        :param validated_data:　验成功子后的数据
+        :return:
+        '''</span>
+
+        <span class="token comment" spellcheck="true"># １.更新数据</span>
+        instance<span class="token punctuation">.</span>btitle <span class="token operator">=</span> validated_data<span class="token punctuation">[</span><span class="token string">'btitle'</span><span class="token punctuation">]</span>
+        instance<span class="token punctuation">.</span>bpub_date <span class="token operator">=</span> validated_data<span class="token punctuation">[</span><span class="token string">'bpub_date'</span><span class="token punctuation">]</span>
+        instance<span class="token punctuation">.</span>bread <span class="token operator">=</span> validated_data<span class="token punctuation">[</span><span class="token string">'bread'</span><span class="token punctuation">]</span>
+        instance<span class="token punctuation">.</span>bcomment <span class="token operator">=</span> validated_data<span class="token punctuation">[</span><span class="token string">'bcomment'</span><span class="token punctuation">]</span>
+
+        <span class="token comment" spellcheck="true"># 2.入库</span>
+        instance<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> instance
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p><em><img src="/2021/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210419163100154.png" alt="image-20210419163100154"></em>*</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lady X</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://wlyyqx.github.io/2021/07083.html">http://wlyyqx.github.io/2021/07083.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lady X</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/DRF/">
+                                    <span class="chip bg-color">DRF</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/aliplay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'http://wlyyqx.github.io/2021/07083.html';
+        this.page.identifier = '/2021/07083.html';
+        this.page.title = '序列化器';
+    };
+    let disqus_shortname = '';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/07083.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="序列化器">
+                        
+                        <span class="card-title">序列化器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/DRF/">
+                        <span class="chip bg-color">DRF</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07082.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="restful风格">
+                        
+                        <span class="card-title">restful风格</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/DRF/">
+                        <span class="chip bg-color">DRF</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">lady X</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/wlyyqx" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2062784669@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2062784669" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2062784669" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="/"></script>
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>

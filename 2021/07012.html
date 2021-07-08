@@ -406,7 +406,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    470
+                    426
                 </div>
                 
 
@@ -432,17 +432,68 @@
 <h6 id="什么是同源策略？"><a href="#什么是同源策略？" class="headerlink" title="什么是同源策略？"></a>什么是同源策略？</h6><p>​    如果缺少了同源策略，浏览器很容易受到XSS、CSFR等攻击。所谓同源是<br>​    指”协议 +域名+端口”三者相同，即便两个不同的域名指向同一个ip地<br>​    址，也非同源</p>
 <h6 id="同源策略限制以下几种行为："><a href="#同源策略限制以下几种行为：" class="headerlink" title="同源策略限制以下几种行为："></a>同源策略限制以下几种行为：</h6><p>1 . Cookie、LocalStorage 和 IndexDB 无法读取<br>2 . DOM 和 Js对象无法获得<br>3 . AJAX 请求不能发送</p>
 <h3 id="前端解决跨域"><a href="#前端解决跨域" class="headerlink" title="前端解决跨域"></a>前端解决跨域</h3><h4 id="既然跨域是因为不同源，那我同源不就完事儿了，但是后端请求地址不可能改"><a href="#既然跨域是因为不同源，那我同源不就完事儿了，但是后端请求地址不可能改" class="headerlink" title="既然跨域是因为不同源，那我同源不就完事儿了，但是后端请求地址不可能改"></a>既然跨域是因为不同源，那我同源不就完事儿了，但是后端请求地址不可能改</h4><h4 id="变，所以可以在前端和后端的中间加一层代理，前端通过代理访问后端。"><a href="#变，所以可以在前端和后端的中间加一层代理，前端通过代理访问后端。" class="headerlink" title="变，所以可以在前端和后端的中间加一层代理，前端通过代理访问后端。"></a>变，所以可以在前端和后端的中间加一层代理，前端通过代理访问后端。</h4><p>在Vue-cli工具中已经提供了代理的功能，只需要配置即可。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> 在根目录下的config/index.js文件中有如下配置项：</span><br><span class="line"><span class="number">2</span> proxyTable: &#123;</span><br><span class="line">    <span class="string">&#x27;/&#x27;</span>: &#123;</span><br><span class="line">        target: <span class="string">&#x27;http://127.0.0.1:8000/&#x27;</span>,</span><br><span class="line">        changeOrigin: true,</span><br><span class="line">        pathRewrite: &#123;</span><br><span class="line">            <span class="string">&#x27;^/api&#x27;</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">在根目录下的config<span class="token operator">/</span>index<span class="token punctuation">.</span>js文件中有如下配置项：
+proxyTable<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token string">'/'</span><span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        target<span class="token punctuation">:</span> <span class="token string">'http://127.0.0.1:8000/'</span><span class="token punctuation">,</span>
+        changeOrigin<span class="token punctuation">:</span> true<span class="token punctuation">,</span>
+        pathRewrite<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+            <span class="token string">'^/api'</span><span class="token punctuation">:</span> <span class="token string">''</span>
+        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+</code></pre>
 <ul>
 <li>‘/‘表示以’/‘(即所有的路径)开头的路径均需要代理</li>
 <li>target：代理的目标服务器地址（即后端服务器地址）为<br>‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/&#39;">http://127.0.0.1:8000/&#39;</a></li>
 <li>changeOrigin：为修改源：修改请求中的源地址    </li>
 <li>pathReWrite：URL路径重写，对于以’/api’开头的路径将’/api’替换<br>为’’</li>
 </ul>
-<h1 id="后端解决跨域"><a href="#后端解决跨域" class="headerlink" title="后端解决跨域"></a>后端解决跨域</h1><p>安装django-cors-headers</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;corsheaders&#x27;</span>，</span><br><span class="line">    ...</span><br><span class="line"> ] </span><br><span class="line"> </span><br><span class="line"> MIDDLEWARE_CLASSES = (</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;corsheaders.middleware.CorsMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.middleware.common.CommonMiddleware&#x27;</span>, <span class="comment"># 注意顺序</span></span><br><span class="line">    ...</span><br><span class="line">)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> <span class="comment">#跨域增加忽略</span></span><br><span class="line">CORS_ALLOW_CREDENTIALS = <span class="literal">True</span></span><br><span class="line">CORS_ORIGIN_ALLOW_ALL = <span class="literal">True</span></span><br><span class="line">CORS_ORIGIN_WHITELIST = (</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">CORS_ALLOW_METHODS = (</span><br><span class="line">    <span class="string">&#x27;DELETE&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;OPTIONS&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;PATCH&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;PUT&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;VIEW&#x27;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">CORS_ALLOW_HEADERS = (</span><br><span class="line">    <span class="string">&#x27;XMLHttpRequest&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;X_FILENAME&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;accept-encoding&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;authorization&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;content-type&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;dnt&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;origin&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;user-agent&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;x-csrftoken&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;x-requested-with&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Pragma&#x27;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="后端解决跨域"><a href="#后端解决跨域" class="headerlink" title="后端解决跨域"></a>后端解决跨域</h2><p>安装django-cors-headers</p>
+<pre class=" language-python"><code class="language-python">INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token string">'corsheaders'</span>，
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+ <span class="token punctuation">]</span> 
+ 
+ MIDDLEWARE_CLASSES <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token string">'corsheaders.middleware.CorsMiddleware'</span><span class="token punctuation">,</span>
+    <span class="token string">'django.middleware.common.CommonMiddleware'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true"># 注意顺序</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">)</span>
+ 
+ 
+ <span class="token comment" spellcheck="true">#跨域增加忽略</span>
+CORS_ALLOW_CREDENTIALS <span class="token operator">=</span> <span class="token boolean">True</span>
+CORS_ORIGIN_ALLOW_ALL <span class="token operator">=</span> <span class="token boolean">True</span>
+CORS_ORIGIN_WHITELIST <span class="token operator">=</span> <span class="token punctuation">(</span>
+<span class="token punctuation">)</span>
 
+CORS_ALLOW_METHODS <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token string">'DELETE'</span><span class="token punctuation">,</span>
+    <span class="token string">'GET'</span><span class="token punctuation">,</span>
+    <span class="token string">'OPTIONS'</span><span class="token punctuation">,</span>
+    <span class="token string">'PATCH'</span><span class="token punctuation">,</span>
+    <span class="token string">'POST'</span><span class="token punctuation">,</span>
+    <span class="token string">'PUT'</span><span class="token punctuation">,</span>
+    <span class="token string">'VIEW'</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+
+CORS_ALLOW_HEADERS <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token string">'XMLHttpRequest'</span><span class="token punctuation">,</span>
+    <span class="token string">'X_FILENAME'</span><span class="token punctuation">,</span>
+    <span class="token string">'accept-encoding'</span><span class="token punctuation">,</span>
+    <span class="token string">'authorization'</span><span class="token punctuation">,</span>
+    <span class="token string">'content-type'</span><span class="token punctuation">,</span>
+    <span class="token string">'dnt'</span><span class="token punctuation">,</span>
+    <span class="token string">'origin'</span><span class="token punctuation">,</span>
+    <span class="token string">'user-agent'</span><span class="token punctuation">,</span>
+    <span class="token string">'x-csrftoken'</span><span class="token punctuation">,</span>
+    <span class="token string">'x-requested-with'</span><span class="token punctuation">,</span>
+    <span class="token string">'Pragma'</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code></pre>
 
                 
             </div>
@@ -767,13 +818,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/062915650.html">
+                <a href="/2021/0701163.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="模糊查询">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">模糊查询</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -784,31 +835,15 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            lady X
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Ajax/">
-                        <span class="chip bg-color">Ajax</span>
-                    </a>
-                    
-                    <a href="/tags/jQuery/">
-                        <span class="chip bg-color">jQuery</span>
-                    </a>
-                    
                 </div>
                 
             </div>

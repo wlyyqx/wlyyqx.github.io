@@ -406,7 +406,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    437
+                    375
                 </div>
                 
 
@@ -429,18 +429,71 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="如果使用序列化的方法，先要创建序列化器"><a href="#如果使用序列化的方法，先要创建序列化器" class="headerlink" title="如果使用序列化的方法，先要创建序列化器"></a>如果使用序列化的方法，先要创建序列化器</h2><ul>
-<li>第一步：配置子路由：<br>path(‘tiao/‘,views.tiao.as_view(),name=’tiao’)</li>
+<li><p>第一步：配置子路由：</p>
+<pre class=" language-python"><code class="language-python">path<span class="token punctuation">(</span><span class="token string">'tiao/'</span><span class="token punctuation">,</span>views<span class="token punctuation">.</span>tiao<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">'tiao'</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
 </ul>
 <ul>
-<li><p>第二步：HTML页面：<br><code>&lt;input type=&quot;text&quot; id=&quot;cha&quot;&gt; &lt;button onclick=&quot;tiaojian()&quot;&gt;查询&lt;/button&gt; </code>  </p>
+<li><p>第二步：HTML页面：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cha<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tiaojian()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>查询<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>  
+</code></pre>
 </li>
 <li><p>写一个按钮触发函数</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tiaojian</span><span class="params">()</span></span> &#123;</span><br><span class="line">        var a = $(<span class="string">&#x27;#cha&#x27;</span>).val();</span><br><span class="line">        </span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            url: <span class="string">&quot;&#123;% url &#x27;tiao&#x27; %&#125;&quot;</span>,</span><br><span class="line">            <span class="built_in">type</span>: <span class="string">&#x27;GET&#x27;</span>,           #get请求或者post请求都可以</span><br><span class="line">            data: (&#123;</span><br><span class="line">                <span class="string">&#x27;cha&#x27;</span>: a           #把获取到的值定义为‘cha’ 传到后端 </span><br><span class="line">            &#125;),</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span> <span class="params">(date)</span></span> &#123;</span><br><span class="line">                var html = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">                <span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; <span class="built_in">date</span>.length; i++) &#123;</span><br><span class="line">                    html += <span class="string">&#x27;&lt;tr&gt;&lt;td&gt;&#x27;</span> + <span class="string">&#x27;&lt;input type=&quot;checkbox&quot; name=&quot;bat&quot; value=&quot;&#123;&#123; b.id &#125;&#125;&quot;&gt;&#x27;</span> + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].id + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].bname + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].stock + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].money + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].author_id + <span class="string">&#x27;&lt;/td&gt;&#x27;</span> +</span><br><span class="line">                        <span class="string">&#x27;&lt;td&gt;&#x27;</span> + <span class="built_in">date</span>[i].comment + <span class="string">&#x27;&lt;/td&gt;&lt;/tr&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                $(<span class="string">&#x27;#text&#x27;</span>).html(html)</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="built_in">error</span>: <span class="function"><span class="keyword">function</span> <span class="params">()</span></span> &#123;</span><br><span class="line">                alert(<span class="string">&#x27;error&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>第三步：Views.py   有两种写法，一中序列化器的写法，一个原生的写法</p>
-<h3 id="序列化器的写法"><a href="#序列化器的写法" class="headerlink" title="序列化器的写法"></a>序列化器的写法</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework.views import APIView</span><br><span class="line"><span class="keyword">from</span> shop.serializer import BookModelSerializer</span><br><span class="line"></span><br><span class="line">class tiao(APIView):</span><br><span class="line">    def <span class="builtin-name">get</span>(self,request):</span><br><span class="line">        cha = request.GET.<span class="builtin-name">get</span>(<span class="string">&#x27;cha&#x27;</span>)</span><br><span class="line">        v = Books.objects.filter(<span class="attribute">bname__contains</span>=cha).all()   #模糊查询到bname字段中有前端获取关键词的所有值</span><br><span class="line">        serializr = BookModelSerializer(<span class="attribute">instance</span>=v, <span class="attribute">many</span>=<span class="literal">True</span>)      </span><br><span class="line">        date = serializr.data</span><br><span class="line">        return JsonResponse(date,<span class="attribute">safe</span>=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="原生的写法"><a href="#原生的写法" class="headerlink" title="原生的写法"></a>原生的写法</h3>   <figure class="highlight plaintext"><figcaption><span>tiao(request):</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cha = request.POST.get(&#x27;cha&#x27;)</span><br><span class="line">v = Books.objects.filter(bname__contains=cha).all()</span><br><span class="line">data = []</span><br><span class="line">for i in v:</span><br><span class="line">    data_dict = &#123;</span><br><span class="line">        &#x27;bname&#x27;:i.bname,</span><br><span class="line">        &#x27;stock&#x27;:i.stock,</span><br><span class="line">        &#x27;money&#x27;:i.money,</span><br><span class="line">        &#x27;author_id&#x27;:i.author_id_id,</span><br><span class="line">        &#x27;comment&#x27;:i.comment,</span><br><span class="line">    &#125;</span><br><span class="line">    data.append(data_dict)</span><br><span class="line">return JsonResponse(data,safe=False)</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">tiaojian</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#cha'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
+  $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      url<span class="token punctuation">:</span> <span class="token string">"&amp;#123;% url 'tiao' %&amp;#125;"</span><span class="token punctuation">,</span>
+      type<span class="token punctuation">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span>           #<span class="token keyword">get</span>请求或者post请求都可以
+      data<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      <span class="token string">'cha'</span><span class="token punctuation">:</span> a           #把获取到的值定义为‘cha’ 传到后端 
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      success<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>date<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+          <span class="token keyword">var</span> html <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+          <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> date<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+              html <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">'&lt;tr>&lt;td>'</span> <span class="token operator">+</span> <span class="token string">'&lt;input type="checkbox" name="bat" value="&amp;#123;&amp;#123; b.id &amp;#125;&amp;#125;">'</span> <span class="token operator">+</span> <span class="token string">'&lt;/td>'</span> <span class="token operator">+</span>
+                  <span class="token string">'&lt;td>'</span> <span class="token operator">+</span> date<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id <span class="token operator">+</span> <span class="token string">'&lt;/td>'</span> <span class="token operator">+</span>
+                  <span class="token string">'&lt;td>'</span> <span class="token operator">+</span> date<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>bname <span class="token operator">+</span> <span class="token string">'&lt;/td>'</span> <span class="token operator">+</span>
+                  <span class="token string">'&lt;td>'</span> <span class="token operator">+</span> date<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>stock <span class="token operator">+</span> <span class="token string">'&lt;/td>'</span> <span class="token operator">+</span>
+                  <span class="token string">'&lt;td>'</span> <span class="token operator">+</span> date<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>money <span class="token operator">+</span> <span class="token string">'&lt;/td>'</span> <span class="token operator">+</span>
+                  <span class="token string">'&lt;td>'</span> <span class="token operator">+</span> date<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>author_id <span class="token operator">+</span> <span class="token string">'&lt;/td>'</span> <span class="token operator">+</span>
+                  <span class="token string">'&lt;td>'</span> <span class="token operator">+</span> date<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>comment <span class="token operator">+</span> <span class="token string">'&lt;/td>&lt;/tr>'</span>
+
+          <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+          <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+          error<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+              <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span>
+          <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>第三步：Views.py   有两种写法，一中序列化器的写法，一个原生的写法</p>
+<h3 id="序列化器的写法"><a href="#序列化器的写法" class="headerlink" title="序列化器的写法"></a>序列化器的写法</h3><p>```python<br>from rest_framework.views import APIView<br>from shop.serializer import BookModelSerializer</p>
+</li>
+</ul>
+<p>class tiao(APIView):<br>    def get(self,request):<br>        cha = request.GET.get(‘cha’)<br>        v = Books.objects.filter(bname__contains=cha).all()   #模糊查询到bname字段中有前端获取关键词的所有值<br>        serializr = BookModelSerializer(instance=v, many=True)<br>        date = serializr.data<br>        return JsonResponse(date,safe=False)</p>
+<pre><code>
+
+### 原生的写法
+   ```         python
+   cha = request.POST.get(&#39;cha&#39;)
+   v = Books.objects.filter(bname__contains=cha).all()
+   data = []
+   for i in v:
+       data_dict = &#123;
+           &#39;bname&#39;:i.bname,
+           &#39;stock&#39;:i.stock,
+           &#39;money&#39;:i.money,
+           &#39;author_id&#39;:i.author_id_id,
+           &#39;comment&#39;:i.comment,
+       &#125;
+       data.append(data_dict)
+       return JsonResponse(data,safe=False)
+</code></pre>
 
                 
             </div>
@@ -712,13 +765,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/07012.html">
+                <a href="/2021/0701163.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="vue+django跨域">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">vue+django跨域</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -733,27 +786,11 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            lady X
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/Django/">
-                        <span class="chip bg-color">Django</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -762,16 +799,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/062954766.html">
+                <a href="/2021/062915650.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="视图集额外动作">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="模糊查询">
                         
-                        <span class="card-title">视图集额外动作</span>
+                        <span class="card-title">模糊查询</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -788,23 +825,24 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Ajax/">
+                        <span class="chip bg-color">Ajax</span>
                     </a>
                     
-                    <a href="/tags/DRF/">
-                        <span class="chip bg-color">DRF</span>
+                    <a href="/tags/jQuery/">
+                        <span class="chip bg-color">jQuery</span>
                     </a>
                     
                 </div>

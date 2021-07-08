@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="拦截登录, Only">
+    <meta name="keywords" content="pycharm git多人协作开发, Only">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>拦截登录 | Only</title>
+    <title>pycharm git多人协作开发 | Only</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">拦截登录</h1>
+                    <h1 class="description center-align post-title">pycharm git多人协作开发</h1>
                 </div>
             </div>
         </div>
@@ -368,8 +368,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/git%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">git配置</span>
                             </a>
                         
                     </div>
@@ -380,8 +380,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
+                            <a href="/categories/Git/" class="post-category">
+                                Git
                             </a>
                         
                     </div>
@@ -393,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-02
+                    2021-07-08
                 </div>
                 
 
@@ -402,7 +402,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    226
+                    81
                 </div>
                 
 
@@ -424,39 +424,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>第一步，自定义中间件：</strong></p>
-<p>   在app下新建文件夹middleware –&gt; 在新建 .py文件         然后导入中间件</p>
-<img src="/2021/070249806/clipboard.png" class>
-
-<p><strong>第二步，在settings 中配置白名单：</strong></p>
-<pre class=" language-python"><code class="language-python">WHITE_REGEX_URL_LIST<span class="token operator">=</span><span class="token punctuation">[</span>
-    <span class="token string">'/login/'</span><span class="token punctuation">,</span>           <span class="token comment" spellcheck="true">#允许可以在不登陆情况下访问的路径</span>
-<span class="token punctuation">]</span>
-</code></pre>
-<p><strong>第三步在 .py文件中</strong></p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 判断用户是否登陆中间件</span>
-<span class="token keyword">from</span> django<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>deprecation <span class="token keyword">import</span> MiddlewareMixin
-<span class="token keyword">from</span> django<span class="token punctuation">.</span>shortcuts <span class="token keyword">import</span> <span class="token operator">*</span>
-<span class="token keyword">from</span> kan<span class="token punctuation">.</span>models <span class="token keyword">import</span> <span class="token operator">*</span>
-<span class="token keyword">from</span> django<span class="token punctuation">.</span>conf <span class="token keyword">import</span> settings
-
-<span class="token keyword">class</span> <span class="token class-name">AuthMiddleware</span><span class="token punctuation">(</span>MiddlewareMixin<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">process_request</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        user_id <span class="token operator">=</span> request<span class="token punctuation">.</span>session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'user_id'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-        user_object <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>id<span class="token operator">=</span>user_id<span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-        <span class="token triple-quoted-string string">'''
-        1.获取用户当前访问的URL
-        2.检查URL是否在白名单中,如果在,继续访问,如果在则判断是否登录
-        '''</span>
-        <span class="token comment" spellcheck="true"># 白名单:项目不登录就可以访问的页面URL</span>
-        <span class="token keyword">if</span> request<span class="token punctuation">.</span>path_info <span class="token keyword">in</span> settings<span class="token punctuation">.</span>WHITE_REGEX_URL_LIST<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># request.path_info获取当前访问URL</span>
-            <span class="token keyword">return</span>  <span class="token comment" spellcheck="true"># 中间件 默认return 空</span>
-        <span class="token comment" spellcheck="true"># 检查用户是否登录,已登录往前走,未登录返回登录页面</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> user_object<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> redirect<span class="token punctuation">(</span>reverse<span class="token punctuation">(</span><span class="token string">'login'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-</code></pre>
+                <p>第一步：</p>
+<p>复制合作者项目名</p>
+<p><img src="http://pic.ihcnb.cn/iHcnb/5bb0aafb244f4.png" alt="clipboard.png"></p>
+<p>在你这边搜索</p>
+<p><img src="http://pic.ihcnb.cn/iHcnb/8db34b37a1084.png" alt="clipboard.png"></p>
+<p>打开pycharm</p>
+<p><img src="http://pic.ihcnb.cn/iHcnb/fd0c2dadcd904.png" alt="clipboard.png"></p>
+<p>复制地址输入地址</p>
+<p><img src="http://pic.ihcnb.cn/iHcnb/2de97e3e54a25.png" alt="clipboard.png"></p>
+<p><img src="http://pic.ihcnb.cn/iHcnb/fb45ebea98971.png" alt="clipboard.png"></p>
+<p>此时多人协作已完成文件克隆</p>
+<p>次分支有所改动上传后需要在分支页面确认</p>
+<p><img src="http://pic.ihcnb.cn/iHcnb/a01cbc2626ad6.png" alt="clipboard.png"></p>
+<p>确认后主分支也需要确认，确认后方可修改主分支</p>
 
                 
             </div>
@@ -483,7 +464,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wlyyqx.github.io/2021/070249806.html">http://wlyyqx.github.io/2021/070249806.html</a>
+                    <a href="http://wlyyqx.github.io/2021/07082.html">http://wlyyqx.github.io/2021/07082.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -521,8 +502,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/git%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">git配置</span>
                                 </a>
                             
                         </div>
@@ -688,9 +669,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://wlyyqx.github.io/2021/070249806.html';
-        this.page.identifier = '/2021/070249806.html';
-        this.page.title = '拦截登录';
+        this.page.url = 'http://wlyyqx.github.io/2021/07082.html';
+        this.page.identifier = '/2021/07082.html';
+        this.page.title = 'pycharm git多人协作开发';
     };
     let disqus_shortname = '';
 
@@ -728,9 +709,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="pycharm git多人协作开发">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="restful风格">
                         
-                        <span class="card-title">pycharm git多人协作开发</span>
+                        <span class="card-title">restful风格</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -747,8 +728,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Git/" class="post-category">
-                                    Git
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -758,8 +739,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">git配置</span>
+                    <a href="/tags/DRF/">
+                        <span class="chip bg-color">DRF</span>
                     </a>
                     
                 </div>
@@ -773,13 +754,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/0702156505.html">
+                <a href="/2021/070249806.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="批量删除">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="拦截登录">
                         
-                        <span class="card-title">批量删除</span>
+                        <span class="card-title">拦截登录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -796,8 +777,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
                                 </a>
                             
                             
@@ -807,12 +788,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Django/">
-                        <span class="chip bg-color">Django</span>
-                    </a>
-                    
-                    <a href="/tags/Ajax/">
-                        <span class="chip bg-color">Ajax</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
