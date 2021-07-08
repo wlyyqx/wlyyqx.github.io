@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vue+django跨域, Only">
+    <meta name="keywords" content="批量删除, Only">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vue+django跨域 | Only</title>
+    <title>批量删除 | Only</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vue+django跨域</h1>
+                    <h1 class="description center-align post-title">批量删除</h1>
                 </div>
             </div>
         </div>
@@ -368,12 +368,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
-                            </a>
-                        
                             <a href="/tags/Django/">
                                 <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                            <a href="/tags/Ajax/">
+                                <span class="chip bg-color">Ajax</span>
                             </a>
                         
                     </div>
@@ -384,8 +384,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -397,7 +397,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-01
+                    2021-07-02
                 </div>
                 
 
@@ -406,7 +406,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    470
+                    323
                 </div>
                 
 
@@ -428,20 +428,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>由于开发模式为前后端分离式开发，故而通常情况下，前端和后端可能运行不同的ip或者port下，导致出现跨域问题</p>
-<h6 id="什么是同源策略？"><a href="#什么是同源策略？" class="headerlink" title="什么是同源策略？"></a>什么是同源策略？</h6><p>​    如果缺少了同源策略，浏览器很容易受到XSS、CSFR等攻击。所谓同源是<br>​    指”协议 +域名+端口”三者相同，即便两个不同的域名指向同一个ip地<br>​    址，也非同源</p>
-<h6 id="同源策略限制以下几种行为："><a href="#同源策略限制以下几种行为：" class="headerlink" title="同源策略限制以下几种行为："></a>同源策略限制以下几种行为：</h6><p>1 . Cookie、LocalStorage 和 IndexDB 无法读取<br>2 . DOM 和 Js对象无法获得<br>3 . AJAX 请求不能发送</p>
-<h3 id="前端解决跨域"><a href="#前端解决跨域" class="headerlink" title="前端解决跨域"></a>前端解决跨域</h3><h4 id="既然跨域是因为不同源，那我同源不就完事儿了，但是后端请求地址不可能改"><a href="#既然跨域是因为不同源，那我同源不就完事儿了，但是后端请求地址不可能改" class="headerlink" title="既然跨域是因为不同源，那我同源不就完事儿了，但是后端请求地址不可能改"></a>既然跨域是因为不同源，那我同源不就完事儿了，但是后端请求地址不可能改</h4><h4 id="变，所以可以在前端和后端的中间加一层代理，前端通过代理访问后端。"><a href="#变，所以可以在前端和后端的中间加一层代理，前端通过代理访问后端。" class="headerlink" title="变，所以可以在前端和后端的中间加一层代理，前端通过代理访问后端。"></a>变，所以可以在前端和后端的中间加一层代理，前端通过代理访问后端。</h4><p>在Vue-cli工具中已经提供了代理的功能，只需要配置即可。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> 在根目录下的config/index.js文件中有如下配置项：</span><br><span class="line"><span class="number">2</span> proxyTable: &#123;</span><br><span class="line">    <span class="string">&#x27;/&#x27;</span>: &#123;</span><br><span class="line">        target: <span class="string">&#x27;http://127.0.0.1:8000/&#x27;</span>,</span><br><span class="line">        changeOrigin: true,</span><br><span class="line">        pathRewrite: &#123;</span><br><span class="line">            <span class="string">&#x27;^/api&#x27;</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                <p><strong>第一步：配置子路由</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path(<span class="string">&#x27;bathdet/&#x27;</span>,views.bathdet,name=<span class="string">&#x27;bathdet&#x27;</span>),</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>‘/‘表示以’/‘(即所有的路径)开头的路径均需要代理</li>
-<li>target：代理的目标服务器地址（即后端服务器地址）为<br>‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/&#39;">http://127.0.0.1:8000/&#39;</a></li>
-<li>changeOrigin：为修改源：修改请求中的源地址    </li>
-<li>pathReWrite：URL路径重写，对于以’/api’开头的路径将’/api’替换<br>为’’</li>
-</ul>
-<h1 id="后端解决跨域"><a href="#后端解决跨域" class="headerlink" title="后端解决跨域"></a>后端解决跨域</h1><p>安装django-cors-headers</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;corsheaders&#x27;</span>，</span><br><span class="line">    ...</span><br><span class="line"> ] </span><br><span class="line"> </span><br><span class="line"> MIDDLEWARE_CLASSES = (</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;corsheaders.middleware.CorsMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.middleware.common.CommonMiddleware&#x27;</span>, <span class="comment"># 注意顺序</span></span><br><span class="line">    ...</span><br><span class="line">)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> <span class="comment">#跨域增加忽略</span></span><br><span class="line">CORS_ALLOW_CREDENTIALS = <span class="literal">True</span></span><br><span class="line">CORS_ORIGIN_ALLOW_ALL = <span class="literal">True</span></span><br><span class="line">CORS_ORIGIN_WHITELIST = (</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">CORS_ALLOW_METHODS = (</span><br><span class="line">    <span class="string">&#x27;DELETE&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;OPTIONS&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;PATCH&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;PUT&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;VIEW&#x27;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">CORS_ALLOW_HEADERS = (</span><br><span class="line">    <span class="string">&#x27;XMLHttpRequest&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;X_FILENAME&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;accept-encoding&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;authorization&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;content-type&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;dnt&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;origin&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;user-agent&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;x-csrftoken&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;x-requested-with&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Pragma&#x27;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><strong>第二步：HTML页面：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一定要传值value 否则拿不到值</span></span><br><span class="line"></span><br><span class="line">&lt;td&gt;<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;bat&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; b.id &#125;&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//发送ajax请求</span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​    <span class="keyword">var</span> list=[];               <span class="comment">//定义一个空列表</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​    bat = <span class="built_in">document</span>.getElementsByName(<span class="string">&#x27;bat&#x27;</span>);      <span class="comment">//获取所有选择框</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​    <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;bat.length ; i++) &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            <span class="keyword">if</span> (bat[i].checked===<span class="literal">true</span>)&#123;         <span class="comment">//判断如果选择了那个</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​                list.push(bat[i].value);        <span class="comment">//就把哪个的值 添加到空列表list</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​        &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​        $.ajax(&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            url:<span class="string">&quot;&#123;% url &#x27;bathdet&#x27; %&#125;&quot;</span>,        </span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            type:<span class="string">&#x27;POST&#x27;</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            data:(&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​                <span class="string">&#x27;list&#x27;</span>:list                 <span class="comment">//传值</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            &#125;),</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            traditional:<span class="literal">true</span>,           <span class="comment">//传多个参数时使用</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            success:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​                alert(<span class="string">&#x27;success&#x27;</span>)</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            &#125;,</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            error:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​                alert(<span class="string">&#x27;error&#x27;</span>)</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​            &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​        &#125;)</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">​    &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">//按钮绑定 onclick 事件</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;bathdet&#x27; %&#125;&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;a()&quot;</span>&gt;</span>批量删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>第三步 ： 视图</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">**全选按钮：**</span><br><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">​    $(<span class="string">&quot;input[name=all]&quot;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;      <span class="comment">//all 是全选按钮的name属性值</span></span><br><span class="line"></span><br><span class="line">​        <span class="keyword">if</span> (<span class="built_in">this</span>.checked)&#123;</span><br><span class="line"></span><br><span class="line">​            $(<span class="string">&quot;#tbody :checkbox&quot;</span>).prop(<span class="string">&quot;checked&quot;</span>,<span class="literal">true</span>);   <span class="comment">//把要被全选的checkbox放入一个tbody里</span></span><br><span class="line"></span><br><span class="line">​        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">​            $(<span class="string">&quot;#tbody :checkbox&quot;</span>).prop(<span class="string">&quot;checked&quot;</span>,<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line">​        &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 
                 
@@ -469,7 +469,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wlyyqx.github.io/2021/07012.html">http://wlyyqx.github.io/2021/07012.html</a>
+                    <a href="http://wlyyqx.github.io/2021/0702156505.html">http://wlyyqx.github.io/2021/0702156505.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -507,12 +507,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
-                                </a>
-                            
                                 <a href="/tags/Django/">
                                     <span class="chip bg-color">Django</span>
+                                </a>
+                            
+                                <a href="/tags/Ajax/">
+                                    <span class="chip bg-color">Ajax</span>
                                 </a>
                             
                         </div>
@@ -678,9 +678,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://wlyyqx.github.io/2021/07012.html';
-        this.page.identifier = '/2021/07012.html';
-        this.page.title = 'vue+django跨域';
+        this.page.url = 'http://wlyyqx.github.io/2021/0702156505.html';
+        this.page.identifier = '/2021/0702156505.html';
+        this.page.title = '批量删除';
     };
     let disqus_shortname = '';
 
@@ -714,13 +714,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/0702156505.html">
+                <a href="/2021/070249806.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="批量删除">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="拦截登录">
                         
-                        <span class="card-title">批量删除</span>
+                        <span class="card-title">拦截登录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -737,8 +737,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
                                 </a>
                             
                             
@@ -748,12 +748,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Django/">
-                        <span class="chip bg-color">Django</span>
-                    </a>
-                    
-                    <a href="/tags/Ajax/">
-                        <span class="chip bg-color">Ajax</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -767,13 +763,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/062915650.html">
+                <a href="/2021/07012.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="模糊查询">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="vue+django跨域">
                         
-                        <span class="card-title">模糊查询</span>
+                        <span class="card-title">vue+django跨域</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -784,14 +780,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
                                 </a>
                             
                             
@@ -801,12 +797,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jQuery/">
-                        <span class="chip bg-color">jQuery</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/Ajax/">
-                        <span class="chip bg-color">Ajax</span>
+                    <a href="/tags/Django/">
+                        <span class="chip bg-color">Django</span>
                     </a>
                     
                 </div>
