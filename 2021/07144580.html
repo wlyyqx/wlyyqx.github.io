@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="批量删除, Only">
+    <meta name="keywords" content="flask自定义路由, Only">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>批量删除 | Only</title>
+    <title>flask自定义路由 | Only</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">批量删除</h1>
+                    <h1 class="description center-align post-title">flask自定义路由</h1>
                 </div>
             </div>
         </div>
@@ -368,12 +368,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Django/">
-                                <span class="chip bg-color">Django</span>
-                            </a>
-                        
-                            <a href="/tags/Ajax/">
-                                <span class="chip bg-color">Ajax</span>
+                            <a href="/tags/Flask/">
+                                <span class="chip bg-color">Flask</span>
                             </a>
                         
                     </div>
@@ -384,8 +380,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                后端
                             </a>
                         
                     </div>
@@ -397,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-02
+                    2021-07-14
                 </div>
                 
 
@@ -406,7 +402,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    294
+                    15
                 </div>
                 
 
@@ -428,59 +424,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>第一步：配置子路由</strong>：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">'bathdet/'</span><span class="token punctuation">,</span>views<span class="token punctuation">.</span>bathdet<span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">'bathdet'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-</code></pre>
-<p><strong>第二步：HTML页面：</strong></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//一定要传值value 否则拿不到值</span>
-<span class="token operator">&lt;</span>td<span class="token operator">></span><span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"checkbox"</span> name<span class="token operator">=</span><span class="token string">"bat"</span> value<span class="token operator">=</span><span class="token string">"&amp;#123;&amp;#123; b.id &amp;#125;&amp;#125;"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">></span> 
- 
-<span class="token comment" spellcheck="true">//发送ajax请求</span>
-<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"</span><span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
-    <span class="token keyword">var</span> list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>               #定义一个空列表
-    bat <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByName</span><span class="token punctuation">(</span><span class="token string">'bat'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      #获取所有选择框
-    <span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>bat<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>bat<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>checked<span class="token operator">===</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>         #判断如果选择了那个
-                list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>bat<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>        #就把哪个的值 添加到空列表list
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            url<span class="token punctuation">:</span><span class="token string">"&amp;#123;% url 'bathdet' %&amp;#125;"</span><span class="token punctuation">,</span>        
-            type<span class="token punctuation">:</span><span class="token string">'POST'</span><span class="token punctuation">,</span>
-            data<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token string">'list'</span><span class="token punctuation">:</span>list                 #传值
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-            traditional<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>           #传多个参数时使用
-            success<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-            error<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                <h5 id="C-Windows-System32-drivers-etc-hosts-在hosts文件中配置域名"><a href="#C-Windows-System32-drivers-etc-hosts-在hosts文件中配置域名" class="headerlink" title="C:\Windows\System32\drivers\etc\hosts    在hosts文件中配置域名"></a>C:\Windows\System32\drivers\etc\hosts    在hosts文件中配置域名</h5>
 
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-
-
-<span class="token comment" spellcheck="true">//按钮绑定 onclick 事件</span>
-<span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"&amp;#123;% url 'bathdet' %&amp;#125;"</span><span class="token operator">></span><span class="token operator">&lt;</span>button onclick<span class="token operator">=</span><span class="token string">"a()"</span><span class="token operator">></span>批量删除<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
-</code></pre>
-<p><strong>第三步 ： 视图</strong></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"input[name=all]"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//all 是全选按钮的name属性值</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>checked<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#tbody :checkbox"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"checked"</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//把要被全选的checkbox放入一个tbody里</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#tbody :checkbox"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"checked"</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-</code></pre>
 
                 
             </div>
@@ -507,7 +452,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wlyyqx.github.io/2021/0702156505.html">http://wlyyqx.github.io/2021/0702156505.html</a>
+                    <a href="http://wlyyqx.github.io/2021/07144580.html">http://wlyyqx.github.io/2021/07144580.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,12 +490,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Django/">
-                                    <span class="chip bg-color">Django</span>
-                                </a>
-                            
-                                <a href="/tags/Ajax/">
-                                    <span class="chip bg-color">Ajax</span>
+                                <a href="/tags/Flask/">
+                                    <span class="chip bg-color">Flask</span>
                                 </a>
                             
                         </div>
@@ -716,9 +657,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://wlyyqx.github.io/2021/0702156505.html';
-        this.page.identifier = '/2021/0702156505.html';
-        this.page.title = '批量删除';
+        this.page.url = 'http://wlyyqx.github.io/2021/07144580.html';
+        this.page.identifier = '/2021/07144580.html';
+        this.page.title = 'flask自定义路由';
     };
     let disqus_shortname = '';
 
@@ -748,17 +689,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/070249806.html">
+                <a href="/2021/07144580.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="拦截登录">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="flask自定义路由">
                         
-                        <span class="card-title">拦截登录</span>
+                        <span class="card-title">flask自定义路由</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -768,9 +710,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -783,11 +725,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Flask/">
+                        <span class="chip bg-color">Flask</span>
                     </a>
                     
                 </div>
@@ -801,13 +744,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07012.html">
+                <a href="/2021/071215650.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="vue+django跨域">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="flask自定义路由">
                         
-                        <span class="card-title">vue+django跨域</span>
+                        <span class="card-title">flask自定义路由</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -818,7 +761,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
                             </span>
                         <span class="publish-author">
                             
@@ -839,8 +782,8 @@
                         <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/Django/">
-                        <span class="chip bg-color">Django</span>
+                    <a href="/tags/flask/">
+                        <span class="chip bg-color">flask</span>
                     </a>
                     
                 </div>

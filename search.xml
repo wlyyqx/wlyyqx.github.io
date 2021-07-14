@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>flask自定义路由</title>
+      <link href="/2021/07144580.html"/>
+      <url>/2021/07144580.html</url>
+      
+        <content type="html"><![CDATA[<h5 id="C-Windows-System32-drivers-etc-hosts-在hosts文件中配置域名"><a href="#C-Windows-System32-drivers-etc-hosts-在hosts文件中配置域名" class="headerlink" title="C:\Windows\System32\drivers\etc\hosts    在hosts文件中配置域名"></a>C:\Windows\System32\drivers\etc\hosts    在hosts文件中配置域名</h5>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flask </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>flask自定义路由</title>
+      <link href="/2021/071215650.html"/>
+      <url>/2021/071215650.html</url>
+      
+        <content type="html"><![CDATA[<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> url_for<span class="token keyword">from</span> werkzeug<span class="token punctuation">.</span>routing <span class="token keyword">import</span> BaseConverterapp <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span><span class="token keyword">class</span> <span class="token class-name">RegexConverter</span><span class="token punctuation">(</span>BaseConverter<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token triple-quoted-string string">"""    自定义URL匹配正则表达式    """</span>    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> map<span class="token punctuation">,</span> regex<span class="token punctuation">)</span><span class="token punctuation">:</span>        super<span class="token punctuation">(</span>RegexConverter<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>map<span class="token punctuation">)</span>        self<span class="token punctuation">.</span>regex <span class="token operator">=</span> regex    <span class="token keyword">def</span> <span class="token function">to_python</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token triple-quoted-string string">"""        路由匹配时，匹配成功后传递给视图函数中参数的值        :param value:        :return:        """</span>        <span class="token keyword">return</span> int<span class="token punctuation">(</span>value<span class="token punctuation">)</span>    <span class="token keyword">def</span> <span class="token function">to_url</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token triple-quoted-string string">"""        使用url_for反向生成URL时，传递的参数经过该方法处理，返回的值用于生成URL中的参数        :param value:        :return:        """</span>        val <span class="token operator">=</span> super<span class="token punctuation">(</span>RegexConverter<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>to_url<span class="token punctuation">(</span>value<span class="token punctuation">)</span>        <span class="token keyword">return</span> valapp<span class="token punctuation">.</span>url_map<span class="token punctuation">.</span>converters<span class="token punctuation">[</span><span class="token string">'regex'</span><span class="token punctuation">]</span> <span class="token operator">=</span> RegexConverter@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/index/&lt;regex("\d+"):uid>'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>uid<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">print</span><span class="token punctuation">(</span>uid<span class="token punctuation">,</span>type<span class="token punctuation">(</span>uid<span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#反向生成</span>    url_for<span class="token punctuation">(</span><span class="token string">'index'</span><span class="token punctuation">,</span>uid<span class="token operator">=</span><span class="token number">999</span><span class="token punctuation">)</span>    <span class="token keyword">return</span> <span class="token string">'Index'</span><span class="token comment" spellcheck="true"># @app.route('/index/&lt;int:uid>')</span><span class="token comment" spellcheck="true"># def index(uid):</span><span class="token comment" spellcheck="true">#     print(uid,type(uid))</span><span class="token comment" spellcheck="true">#     return 'Index'</span><span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> flask </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>序列化器</title>
       <link href="/2021/07083.html"/>
       <url>/2021/07083.html</url>
